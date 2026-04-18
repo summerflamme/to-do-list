@@ -1,0 +1,8 @@
+<p> bienvenue </p>
+<div class="card-content">
+  <div class="card-content">
+    @for (task of tasks(); track task.id) {
+      <app-task-card [task]="signal(task)"></app-task-card>
+    }
+  </div>
+</div>

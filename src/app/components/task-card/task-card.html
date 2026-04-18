@@ -1,0 +1,36 @@
+<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+
+  <div class="card-header"> {{ task().title }}
+    <span class="badge rounded-pill"
+          [ngClass]="{'bg-light' : task().status == 'à faire',
+                      'bg-warning' : task().status == 'en cour',
+                      'bg-success' : task().status == 'fini',
+                      'bg-danger': task().status == 'en retard'}"> {{ task().status }}</span></div>
+  <div class="card-body bg-primary">
+    <p class="card-text"> {{ task().description }} </p>
+  </div>
+  <div class="card-body bg-primary d-flex justify-content-between">
+    <a  href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a  href="#"><i class="fa-solid fa-pen"></i></a>
+    <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+  </div>
+  <div class="card-body bg-info">
+    @if (task().status == 'à faire'){
+      <button class="btn" (click)="onStartTask()">
+      Commencer la tâche
+      </button>
+    }
+      @if (task().status == 'en cour'){
+        <button class="btn" (click)="onValidTask()">
+        Terminer la tâche
+        </button>
+
+      }
+    <br>
+    <p> Commencer le {{ task().start_date }}
+      <br>
+    @if (task().end_date != null){
+      <p> Fini le {{ task().end_date }}
+      }
+  </div>
+</div>
