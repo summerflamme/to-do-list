@@ -1,0 +1,16 @@
+<div class="content">
+  <div>
+    <h1> Editer la tâche </h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="task.title" name="title">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" rows="3" [(ngModel)]="task.description" name="description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+  </div>
+</div>

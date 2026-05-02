@@ -24,10 +24,14 @@
         <button class="btn" (click)="onValidTask()">
         Terminer la tâche
         </button>
-
+      }
+      @if (task().status == 'fini'){
+        <button class="btn" (click)="onResetTask()">
+          Reset la tâche
+        </button>
       }
     <br>
-    <p> Commencer le {{ task().start_date }}
+    <p> Commencer le {{ task().start_date}}
       <br>
     @if (task().end_date != null){
       <p> Fini le {{ task().end_date }}

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, signal} from '@angular/core';
-import {TaskCard} from '../components/task-card/task-card';
-import {Task} from '../models/Task';
+import {TaskCard} from '../task-card/task-card';
+import {Task} from '../../models/Task';
 import {Observable} from 'rxjs';
 import {createClient, SupabaseClient} from '@supabase/supabase-js';
 
